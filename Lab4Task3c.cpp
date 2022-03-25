@@ -10,15 +10,15 @@ int main()
     double ed = -1;
     double ed1 = 1;
     double ced;
-    double rez = 0,rez1 =0;
+    double rez = 0, rez1 = 0;
     double x;
         __asm
         {
         beg1:
-            fstp x
-            fld ed
-            mov ecx, k1
-          beg:
+                fstp x
+                fld ed
+                mov ecx, k1
+                beg :
             fmul ed
                 loop beg
                 inc k1
@@ -35,20 +35,18 @@ int main()
                 fld k
                 fadd ed1
                 fstp k
-            fldln2
-            fsub rez1
-            fstp ln
-            fld ln
-            fabs
-            fcom pogr
-            fstsw ax
-            sahf
-            jc  _less1
-            jmp beg1
+                fldln2
+                fsub rez1
+                fstp ln
+                fld ln
+                fabs
+                fcom pogr
+                fstsw ax
+                sahf
+                jc  _less1
+                jmp beg1
         }
     _less1:
-        std::cout << "Number of iterations to find " << 5 << " correct digits after the decimal point : "<<k << std::endl;
-        std::cout << "Number of iterations to find " << 7 << " correct digits after the decimal point : " << 500001 << std::endl;
-        std::cout << "Number of iterations to find " << 9 << " correct digits after the decimal point : " << 5000001 << std::endl;
+        std::cout << "Number of iterations to find " << 5 << " correct digits after the decimal point : " << k << std::endl;
     return 0;
 }
