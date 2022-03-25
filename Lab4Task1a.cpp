@@ -3,7 +3,6 @@
 using namespace std;
 int main()
 {
-	double arr[2];
 	double x, x1, x2;
 	double t1 = -10;
 	double t2 = 10;
@@ -84,29 +83,20 @@ int main()
 			sahf
 			jc  _less
 			jnz _great
-			_zero :
-		fld cur1
+		    fld cur1
 			fcom z
 			fstsw ax
 			sahf
 			jz zero
 			jmp zero1
-			zero :
-		fld t
+			zero:
+		    fld t
 			fstp x2
-	}
-	arr[kk] = x2;
-	__asm
-	{
 		inc kk
 		jmp _less
 		zero1 :
 		fld t1
-			fstp x2
-	}
-	arr[kk] = x2;
-	__asm
-	{
+		fstp x2
 		inc kk
 		jmp _less
 		_less :
@@ -160,33 +150,19 @@ int main()
 			jc  _less1
 			jnz _great1
 			je _great1
-			_less1 :
-		fld x
-			fstp x1
-	}
-	arr[kk] = x1;
-	__asm
-	{
-		inc kk
-		fld z
-		fstp t1
-		fld ten
-		fstp t2
-		mov eax, kk
-		sub eax, 2
-		cmp eax, 0
-		je _less2
-		jmp _next
 	}
 _great1:
 	{
 		std::cout << "Not roots" << std::endl;
 		return 0;
 	}
-_less2:
-	for (int i = 0; i < kk; i++)
+_less1:
+    kk++;
+	if (kk >= 2)
 	{
-		std::cout << "Root: " << arr[i] << std::endl;
+		std::cout << "Root: " << x <<std::endl<<"Root: " << x2 << std::endl;
 	}
+	else
+		std::cout << "Root: " << x<<std::endl;
 	return 0;
 }
