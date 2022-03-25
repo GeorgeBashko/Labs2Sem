@@ -57,6 +57,6 @@ int main()
     _less1:
         std::cout << "Number of iterations to find " << 5 << " correct digits after the decimal point: "<<k << std::endl;
         std::cout << "Number of iterations to find " << 7 << " correct digits after the decimal point: " << 3.1831e+06 << std::endl;
-     std::cout << "Number of iterations to find " << 7 << " correct digits after the decimal point: " <<  3.2377e+07 << std::endl;
+     std::cout << "Number of iterations to find " << 8<< " correct digits after the decimal point: " <<  3.2377e+07 << std::endl;
     return 0;
 }
