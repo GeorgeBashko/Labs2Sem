@@ -1,9 +1,5 @@
 #include <iostream>
 #include <math.h>
-double func(double x1)
-{
-	return pow(x1, 2.0) * 2 - 1331 / (x1 + 11) + 3;
-}
 int main()
 {
 	double x;
